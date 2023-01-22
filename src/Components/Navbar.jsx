@@ -3,11 +3,17 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
-        <div style={{ display: 'flex', alignItems: 'space-between' }}>
-            <span className='logo'>REDUX STORE</span>
-            <Link className='navLink' to="/">Home</Link>
-            <Link className='navLink' to="/cart">Cart</Link>
-            <span className='cartCount'>Cart Items:0</span>
+        <div>
+            <span className='logo' style={{ display: 'flex', alignItems: 'center', justifyContent: "flex-start" }}>REDUX STORE</span>
+            <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'flex-end'
+            }}>
+                <Link className='navLink' to="/">Home</Link>
+                <Link className='navLink' to="/cart">Cart</Link>
+                <span className='cartCount'>Cart Items:0</span>
+            </div>
         </div>
     )
 }
