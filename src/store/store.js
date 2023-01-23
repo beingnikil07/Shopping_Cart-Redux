@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import cartReducer from './cartSlice';   //named export tha isliye kisi bhi name se import krr sakta hu
-
+import cartReducer from './cartSlice';
+import productReducer from './productSlice';
 //configuring store
-const store=configureStore({
-     reducer:{
-         cart:cartReducer, 
-     } 
+const store = configureStore({
+    reducer: {
+        //Hum yha prr register karte hain store mai 
+        cart: cartReducer,            //registering cart
+        product: productReducer,       //registering product 
+    }
 });
 
 export default store;

@@ -2,20 +2,22 @@ import { React, useEffect, useState } from 'react'
 import { add } from '../store/cartSlice'; //import add from cartSlice
 //iss hook ke through  hum apne action ko dispatch krr sakte hai.. 
 import { useDispatch } from 'react-redux';
-
+import { fetchProducts } from '../store/productSlice';
 
 const Products = () => {
     const dispatch = useDispatch();
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        const fetchProducts = async () => {
-            let res = await fetch('https://fakestoreapi.com/products');
-            const data = await res.json();
-            console.log(data);
-            setProducts(data);
-        }
-        fetchProducts();
+
+        dispatch(fetchProducts());    //hum redux mai thunk se api ko fetch kra rhe hai 
+        // const fetchProducts = async () => {
+        //     let res = await fetch('https://fakestoreapi.com/products');
+        //     const data = await res.json();
+        //     console.log(data);
+        //     setProducts(data);
+        // }
+        // fetchProducts();
     }, []);
 
 
